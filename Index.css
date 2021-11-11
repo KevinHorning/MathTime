@@ -40,11 +40,11 @@ select {
 }
 @font-face {
   font-family: kumarone-regular;
-  src: url("kumarone-regular.woff") format("woff");
+  src: url("Kumarone-Regular.woff") format("woff");
 }
 @font-face {
   font-family: poppins-medium;
-  src: url("poppins-medium.woff") format("woff");
+  src: url("Poppins-Medium.woff") format("woff");
 }
 
 #ProblemScreen {
