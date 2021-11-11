@@ -50,60 +50,61 @@ select {
 #ProblemScreen {
   visibility: hidden;
 }
+#BackToHome {
+  /* 1.5vw used to be 25px */
+  margin-left: 1.5vw;
+  margin-top: 1.5vw;
+}
 #ProblemType {
   float: right;
   display: inline;
-  padding-right: 25px;
-  font-size: 20px;
+  padding-right: 1.5vw;
+  font-size: 1.2vw;
   color: #5d00a0;
   font-family: poppins-medium;
 }
 #Equation {
   margin: 0 auto;
   text-align: center;
-  margin-top: 120px;
-  border-spacing: 10px;
-  font-size: 45px;
-  font-kerning: 500px;
+  margin-top: 7.2vw;
+  border-spacing: 0.6vw;
+  font-size: 2.7vw;
+  font-kerning: 30vw;
   color: #5d00a0;
   font-family: kumarone-regular;
 }
 .EquationPart {
-  padding-top: 15px;
+  padding-top: 0.9vw;
 }
 #Answer {
-  height: 50px;
-  font-size: 50px;
+  height: 3vw;
+  font-size: 3vw;
   color: #5d00a0;
   font-family: kumarone-regular;
-}
-#BackToHome {
-  margin-left: 25px;
-  margin-top: 25px;
 }
 #ProblemScreen-Result {
   position: absolute;
   top: 55%;
   left: 45%;
-  font-size: 30px;
+  font-size: 1.8vw;
   color: red;
   font-family: poppins-medium;
 }
 #ProblemScreen-ButtonsDiv {
   position: absolute;
-  bottom: 25px;
-  right: 25px;
+  bottom: 1.5vw;
+  right: 1.5vw;
 }
 button {
-  font-size: 20px;
+  font-size: 1.2vw;
   color: #5d00a0;
   font-family: poppins-medium;
 }
 #ProblemScreen-Score {
   position: absolute;
-  bottom: 25px;
-  left: 25px;
-  font-size: 20px;
+  bottom: 1.5vw;
+  left: 1.5vw;
+  font-size: 1.2vw;
   color: #5d00a0;
   font-family: poppins-medium;
 }
