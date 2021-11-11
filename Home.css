@@ -1,0 +1,109 @@
+body {
+  background-color: lightblue;
+}
+
+#BoundingBox {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 70%;
+  margin-top: 7vw;
+  background: #ffd6ff 0% 0% no-repeat padding-box;
+  border: 0.1vw solid #ffd6ff;
+  border-radius: 4vw;
+  opacity: 1;
+}
+
+#HomeScreen {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+h1 {
+  font-family: kumarone-regular;
+  font-size: 4vw;
+  color: #5d00a0;
+  padding-top: 4vw;
+  margin-bottom: -1vw;
+}
+h2 {
+  font-family: poppins-medium;
+  font-size: 1.75vw;
+  color: #5d00a0;
+  align-content: center;
+  padding-bottom: -1vw;
+}
+select {
+  font-size: 1vw;
+  color: #5d00a0;
+  font-family: poppins-medium;
+}
+@font-face {
+  font-family: kumarone-regular;
+  src: url(kumarone-regular.woff);
+}
+@font-face {
+  font-family: poppins-medium;
+  src: url(poppins-medium.woff);
+}
+
+#ProblemScreen {
+  visibility: hidden;
+}
+#ProblemType {
+  float: right;
+  display: inline;
+  padding-right: 25px;
+  font-size: 20px;
+  color: #5d00a0;
+  font-family: poppins-medium;
+}
+#Equation {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 120px;
+  border-spacing: 10px;
+  font-size: 45px;
+  font-kerning: 500px;
+  color: #5d00a0;
+  font-family: kumarone-regular;
+}
+.EquationPart {
+  padding-top: 15px;
+}
+#Answer {
+  height: 50px;
+  font-size: 50px;
+  color: #5d00a0;
+  font-family: kumarone-regular;
+}
+#BackToHome {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+#ProblemScreen-Result {
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  font-size: 30px;
+  color: red;
+  font-family: poppins-medium;
+}
+#ProblemScreen-ButtonsDiv {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+button {
+  font-size: 20px;
+  color: #5d00a0;
+  font-family: poppins-medium;
+}
+#ProblemScreen-Score {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  font-size: 20px;
+  color: #5d00a0;
+  font-family: poppins-medium;
+}

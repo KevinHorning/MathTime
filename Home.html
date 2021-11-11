@@ -1,0 +1,58 @@
+<script src="HomeBrain.js"></script>
+<link rel="stylesheet" href="Home.css">
+
+<body>
+    <div id="BoundingBox">
+        <div id="HomeScreen">
+            <h1> Let's do some math! </h1>
+            <h2> Choose your adventure below </h2>
+            <select id="type">
+                <option value="" disabled selected>Choose Math Type</option>
+                <option value="Addition">Addition</option>
+                <option value="Subtraction">Subtraction</option>
+                <option value="Multiplication">Multiplication</option>
+                <option value="Division">Division</option>
+            <!--  <option value="Rounding">Rounding</option> -->
+            </select>
+            <select id="level">
+                <option value="" disabled selected>Choose Difficulty</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+                <option value="Crazy">Crazy</option>
+            </select>
+            <button onclick="GenerateProblem()"> GO! </button>
+            <p id="InputCheck"></p>
+        </div>
+
+        <div id="ProblemScreen">
+            <button id="BackToHome" onclick="BackToHome()"> BACK </button>
+            <p id="ProblemType"></p>
+
+            <table id="Equation">
+                <tr>
+                    <td id="Operand1" class="EquationPart"></td>
+                    <td id="Operation" class="EquationPart"></td>
+                    <td id="Operand2" class="EquationPart"></td>
+                    <td id="EqualSign" class="EquationPart"> = </td>
+                    <td id="AnswerSpace"> <input id="Answer" class="EquationPart"> </td>
+                </tr>
+            </table>
+            
+            <p id="ProblemScreen-Result"></p>
+            <div id="ProblemScreen-ButtonsDiv">
+                <button id="SubmitButton" onclick="SubmitAnswer()"> SUBMIT </button>
+                <button id="NextButton" onclick="GetNextProblem()"> NEXT </button>
+            </div>
+
+            <table id="ProblemScreen-Score">
+                <tr>
+                    <td id="AnsweredRight"></td>
+                    <td id="Slash"></td>
+                    <td id="AnsweredTotal"></td>
+                    <td id="StatsMessage"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
