@@ -66,28 +66,38 @@ select {
 #Equation {
   margin: 0 auto;
   text-align: center;
-  margin-top: 7.2vw;
-  border-spacing: 0.6vw;
-  font-size: 2.7vw;
   font-kerning: 30vw;
   color: #5d00a0;
-  font-family: kumarone-regular;
+  font-family: poppins-medium;
 }
 .EquationPart {
   padding-top: 0.9vw;
 }
 #Answer {
-  height: 3vw;
-  font-size: 3vw;
   color: #5d00a0;
-  font-family: kumarone-regular;
+  font-family: poppins-medium;
 }
 #ProblemScreen-Result {
   position: absolute;
   top: 55%;
   left: 45%;
   font-size: 1.8vw;
-  color: red;
+  font-family: poppins-medium;
+}
+#ProblemScreen-Score {
+  position: absolute;
+  bottom: 1.5vw;
+  left: 1.5vw;
+  font-size: 1.2vw;
+  color: #5d00a0;
+  font-family: poppins-medium;
+}
+#ProblemScreen-Streak {
+  position: absolute;
+  bottom: 1.5vw;
+  margin: 0 0 0 48%;
+  font-size: 1.2vw;
+  color: #5d00a0;
   font-family: poppins-medium;
 }
 #ProblemScreen-ButtonsDiv {
@@ -96,14 +106,6 @@ select {
   right: 1.5vw;
 }
 button {
-  font-size: 1.2vw;
-  color: #5d00a0;
-  font-family: poppins-medium;
-}
-#ProblemScreen-Score {
-  position: absolute;
-  bottom: 1.5vw;
-  left: 1.5vw;
   font-size: 1.2vw;
   color: #5d00a0;
   font-family: poppins-medium;

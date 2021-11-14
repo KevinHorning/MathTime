@@ -40,19 +40,27 @@
             </table>
             
             <p id="ProblemScreen-Result"></p>
-            <div id="ProblemScreen-ButtonsDiv">
-                <button id="SubmitButton" onclick="SubmitAnswer()"> SUBMIT </button>
-                <button id="NextButton" onclick="GetNextProblem()"> NEXT </button>
-            </div>
 
             <table id="ProblemScreen-Score">
                 <tr>
                     <td id="AnsweredRight"></td>
-                    <td id="Slash"></td>
+                    <td id="StatsSlash"></td>
                     <td id="AnsweredTotal"></td>
                     <td id="StatsMessage"></td>
                 </tr>
             </table>
+
+            <table id="ProblemScreen-Streak">
+                <tr>
+                    <td id="StreakMessage"></td>
+                    <td id="StreakValue"></td>
+                </tr>
+            </table>
+
+            <div id="ProblemScreen-ButtonsDiv">
+                <button id="SubmitButton" onclick="SubmitAnswer()"> SUBMIT </button>
+                <button id="NextButton" onclick="GetNextProblem()"> NEXT </button>
+            </div>
         </div>
     </div>
 </body>

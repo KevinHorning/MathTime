@@ -8,8 +8,8 @@ function GenerateProblem(){
     type = document.getElementById("type").value;
     difficulty = document.getElementById("level").value;
     
-    if (type == "" || level == ""){
-        document.getElementById("InputCheck").innerHTML = "Choose problem type and level"; 
+    if (type == "" || difficulty == ""){
+        document.getElementById("InputCheck").innerHTML = "Choose problem type and difficulty"; 
     }
     else{
         document.getElementById("HomeScreen").style.display = "none";
@@ -23,9 +23,7 @@ function GenerateProblem(){
         [operand1, operand2] = GenerateOperands(type, difficulty);
         document.getElementById("Operand1").innerHTML = operand1;
         document.getElementById("Operand2").innerHTML = operand2;
-        document.getElementById("Answer").style.width = AdjustAnswerSpace();
-        document.getElementById("Equation").style.marginLeft = "auto";
-        document.getElementById("Equation").style.marginRight = "auto";
+        document.getElementById("Answer").style.width = AdjustEquationSizeAndAnswerSpace();
 
         if (type == "Addition")
             document.getElementById("Operation").innerHTML = "+";
@@ -133,7 +131,7 @@ function AnswerIsInt([divNumber1, divNumber2]){
     return (answer == Math.floor(answer) && answer == Math.ceil(answer));
 }
 
-function AdjustAnswerSpace(){
+function AdjustEquationSizeAndAnswerSpace(){
 
     if (type == "Addition")
         correctAnswer = parseFloat((operand1 + operand2).toFixed(3)); 
@@ -147,7 +145,34 @@ function AdjustAnswerSpace(){
         // TODO
     }
 
-    return ((((correctAnswer + '').replace('.', '').replace('-', '').length) * 40).toString()) + "px";
+    var operand1Length = operand1.toString().replace('.', '').replace('-', '').length;
+    var operand2Length = operand2.toString().replace('.', '').replace('-', '').length;
+    var answerLength = correctAnswer.toString().replace('.', '').replace('-', '').length;
+    var equationChars = operand1Length + operand2Length + answerLength + 6;
+    if (equationChars >= 9 && equationChars < 16){
+        document.getElementById("Equation").style.fontSize = "4vw";
+        document.getElementById("Equation").style.borderSpacing = "6vw";
+        document.getElementById("Equation").style.marginTop = "2vw";
+        document.getElementById("Answer").style.fontSize = "4vw";
+        document.getElementById("Answer").style.height = "4.8vw";
+        return (((correctAnswer.toString().replace('.', '').replace('-', '').length) * 3.5).toString()) + "vw";
+    }
+    else if (equationChars >= 16 && equationChars < 23){
+        document.getElementById("Equation").style.fontSize = "3.2vw";
+        document.getElementById("Equation").style.borderSpacing = "2.8vw";
+        document.getElementById("Equation").style.marginTop = "6vw";
+        document.getElementById("Answer").style.fontSize = "3.2vw";
+        document.getElementById("Answer").style.height = "3.85vw";
+        return (((correctAnswer.toString().replace('.', '').replace('-', '').length) * 2.7).toString()) + "vw";
+    }
+    else{ //length is 23 to 30 
+        document.getElementById("Equation").style.fontSize = "2.5vw";
+        document.getElementById("Equation").style.borderSpacing = "1.25vw";
+        document.getElementById("Equation").style.marginTop = "7vw";
+        document.getElementById("Answer").style.fontSize = "2.5vw";
+        document.getElementById("Answer").style.height = "3vw";
+        return (((correctAnswer.toString().replace('.', '').replace('-', '').length) * 2).toString()) + "vw";
+    }
 }
 
 function SubmitAnswer(){
@@ -167,10 +192,13 @@ function SubmitAnswer(){
             answeredRight++;
             streak++;
             document.getElementById("ProblemScreen-Result").innerHTML = "Correct!";
-        }
+            document.getElementById("ProblemScreen-Result").style.color = "Green";
+        }   
         else{
             streak = 0;
             document.getElementById("ProblemScreen-Result").innerHTML = "Wrong!";
+            document.getElementById("ProblemScreen-Result").style.color = "Red";
+            
         }
         
         answeredTotal++;
@@ -188,20 +216,24 @@ function GetNextProblem(){
     [operand1, operand2] = GenerateOperands(type, difficulty);
     document.getElementById("Operand1").innerHTML = operand1;
     document.getElementById("Operand2").innerHTML = operand2;
-    document.getElementById("Answer").style.width = AdjustAnswerSpace();
+    document.getElementById("Answer").style.width = AdjustEquationSizeAndAnswerSpace();
 }
 
 function UpdateStats(clear){
     if (clear == true){
         document.getElementById("AnsweredRight").innerHTML = "";
         document.getElementById("AnsweredTotal").innerHTML = "";
-        document.getElementById("Slash").innerHTML = "";
+        document.getElementById("StatsSlash").innerHTML = "";
         document.getElementById("StatsMessage").innerHTML = "";
+        document.getElementById("StreakMessage").innerHTML = "";
+        document.getElementById("StreakValue").innerHTML = "";
     }
     else { // (clear == false)
         document.getElementById("AnsweredRight").innerHTML = answeredRight;
         document.getElementById("AnsweredTotal").innerHTML = answeredTotal;
-        document.getElementById("Slash").innerHTML = "/";
-        document.getElementById("StatsMessage").innerHTML = "Answered Correctly, Streak - " + streak;
+        document.getElementById("StatsSlash").innerHTML = "/";
+        document.getElementById("StatsMessage").innerHTML = "Answered Correctly";
+        document.getElementById("StreakMessage").innerHTML = "Streak: ";
+        document.getElementById("StreakValue").innerHTML = streak;
     }
 }
