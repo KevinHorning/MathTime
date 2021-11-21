@@ -51,7 +51,6 @@ function BackToHome(){
 
     document.getElementById("SubmitButton").style.display = "block";
     document.getElementById("AnswerSpace").innerHTML = '<input id="Answer" class="EquationPart">'; 
-    document.getElementById("AnswerSpace").style.paddingTop = "0px"
     document.getElementById("ProblemScreen-Result").innerHTML = "";
 
     answeredRight = 0;
@@ -183,7 +182,6 @@ function SubmitAnswer(){
     else {
         document.getElementById("SubmitButton").style.display = "none";
         document.getElementById("NextButton").style.display = "block";
-        document.getElementById("AnswerSpace").style.paddingTop = "15px";
         document.getElementById("ProblemScreen-Result").style.left = "45%";
         
         var submittedAnswer = document.getElementById("Answer").value;
@@ -210,7 +208,6 @@ function GetNextProblem(){
     document.getElementById("SubmitButton").style.display = "block";
     document.getElementById("NextButton").style.display = "none";
     document.getElementById("AnswerSpace").innerHTML = '<input id="Answer" class="EquationPart">'; 
-    document.getElementById("AnswerSpace").style.paddingTop = "0px"
     document.getElementById("ProblemScreen-Result").innerHTML = "";
 
     [operand1, operand2] = GenerateOperands(type, difficulty);

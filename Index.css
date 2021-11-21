@@ -66,12 +66,10 @@ select {
 #Equation {
   margin: 0 auto;
   text-align: center;
+  padding-top: 1vw;
   font-kerning: 30vw;
   color: #5d00a0;
   font-family: poppins-medium;
-}
-.EquationPart {
-  padding-top: 0.9vw;
 }
 #Answer {
   color: #5d00a0;
