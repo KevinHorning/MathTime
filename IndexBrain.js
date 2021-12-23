@@ -190,12 +190,12 @@ function SubmitAnswer(){
             answeredRight++;
             streak++;
             document.getElementById("ProblemScreen-Result").innerHTML = "Correct!";
-            document.getElementById("ProblemScreen-Result").style.color = "Green";
+            document.getElementById("ProblemScreen-Result").style.color = "#95B1A0";
         }   
         else{
             streak = 0;
             document.getElementById("ProblemScreen-Result").innerHTML = "Wrong!";
-            document.getElementById("ProblemScreen-Result").style.color = "Red";
+            document.getElementById("ProblemScreen-Result").style.color = "#E32643";
             
         }
         
