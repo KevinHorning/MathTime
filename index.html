@@ -1,5 +1,7 @@
 <script src="IndexBrain.js"></script>
+<script src="AestheticsCode.js"></script>
 <link rel="stylesheet" href="Index.css">
+<link rel="stylesheet" href="Aesthetics.css">
 
 <body>
     <div id="BoundingBox"> 
@@ -63,16 +65,18 @@
             </div>
         </div>
     </div>  
-<img id="Squeek" src="Squeek.png" alt="mathscott";>
-</img>
-<div class="popup" onclick="myFunction()"> R
-    <span class="popuptext" id="myPopup">You're doing great!
-  </div>
-<script>
-    // When the user clicks on div, open the popup
-    function myFunction() {
-      var popup = document.getElementById("myPopup");
-      popup.classList.toggle("show");
-    }
-    </script>
+
+    <div class="SqueekDiv">
+        <span class="SqueekText" id="SqueekText">a a a a a a a a a a a a a a a a a</span>
+        <img id="Squeek" src="Squeek.png" onclick="ShowSqueekTest()" alt="mathscott";>
+    </div>
+    
+<!--    
+    <div id="SqueekDiv">
+        <span id="SqueekDiv-SqueekText">You're doing great!</span>
+        <img id="SqueekDiv-Squeek" src="Squeek.png" alt="mathscott" onclick="SqueekPopup()"></img>
+    </div>
+    <div class="popup"> R
+    </div>
+-->
 </body>
