@@ -148,30 +148,24 @@ function AdjustEquationSizeAndAnswerSpace(){
     var operand2Length = operand2.toString().replace('.', '').replace('-', '').length;
     var answerLength = correctAnswer.toString().replace('.', '').replace('-', '').length;
     var equationChars = operand1Length + operand2Length + answerLength + 6;
+
+    var scale = 0;
     if (equationChars >= 9 && equationChars < 16){
-        document.getElementById("Equation").style.fontSize = "4vw";
-        document.getElementById("Equation").style.borderSpacing = "6vw";
-        document.getElementById("Equation").style.marginTop = "2vw";
-        document.getElementById("Answer").style.fontSize = "4vw";
-        document.getElementById("Answer").style.height = "4.8vw";
-        return (((correctAnswer.toString().replace('.', '').replace('-', '').length) * 3.5).toString()) + "vw";
+        scale = 2;
     }
     else if (equationChars >= 16 && equationChars < 23){
-        document.getElementById("Equation").style.fontSize = "3.2vw";
-        document.getElementById("Equation").style.borderSpacing = "2.8vw";
-        document.getElementById("Equation").style.marginTop = "6vw";
-        document.getElementById("Answer").style.fontSize = "3.2vw";
-        document.getElementById("Answer").style.height = "3.85vw";
-        return (((correctAnswer.toString().replace('.', '').replace('-', '').length) * 2.7).toString()) + "vw";
+        scale = 1;
     }
     else{ //length is 23 to 30 
-        document.getElementById("Equation").style.fontSize = "2.5vw";
-        document.getElementById("Equation").style.borderSpacing = "1.25vw";
-        document.getElementById("Equation").style.marginTop = "7vw";
-        document.getElementById("Answer").style.fontSize = "2.5vw";
-        document.getElementById("Answer").style.height = "3vw";
-        return (((correctAnswer.toString().replace('.', '').replace('-', '').length) * 2).toString()) + "vw";
+        scale = 0;
     }
+
+    document.getElementById("Equation").style.fontSize = ((scale * .75) + 2.75) + "vw";
+    document.getElementById("Equation").style.borderSpacing = ((scale * 1.25) + 1.5) + "vw 0";
+    document.getElementById("Equation").style.marginTop = ((Math.abs(scale - 2) * .75) + 6) + "vw";
+    document.getElementById("Answer").style.fontSize = ((scale * .75) + 2.75) + "vw";
+    document.getElementById("Answer").style.height = ((scale * .9) + 3) + "vw";
+    return (((correctAnswer.toString().replace('.', '').replace('-', '').length) * ((scale * .8) + 2)).toString()) + "vw";
 }
 
 function SubmitAnswer(){
@@ -194,9 +188,8 @@ function SubmitAnswer(){
         }   
         else{
             streak = 0;
-            document.getElementById("ProblemScreen-Result").innerHTML = "Wrong!";
+            document.getElementById("ProblemScreen-Result").innerHTML = "Wrong, the correct answer is " + correctAnswer;
             document.getElementById("ProblemScreen-Result").style.color = "#E32643";
-            
         }
         
         answeredTotal++;

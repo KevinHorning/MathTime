@@ -64,9 +64,9 @@ select {
   font-family: poppins-medium;
 }
 #Equation {
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
   text-align: center;
-  padding-top: 1vw;
+  padding: 1vw 0 0 0;
   font-kerning: 30vw;
   color: #f4acb7;
   font-family: poppins-medium;
@@ -76,9 +76,9 @@ select {
   font-family: poppins-medium;
 }
 #ProblemScreen-Result {
-  position: absolute;
-  top: 55%;
-  left: 45%;
+  margin: 5vw;
+  padding: 0;
+  text-align: center;
   font-size: 1.8vw;
   font-family: poppins-medium;
 }
