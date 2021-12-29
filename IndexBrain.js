@@ -162,7 +162,7 @@ function AdjustEquationSizeAndAnswerSpace(){
 
     document.getElementById("Equation").style.fontSize = ((scale * .75) + 2.75) + "vw";
     document.getElementById("Equation").style.borderSpacing = ((scale * 1.25) + 1.5) + "vw 0";
-    document.getElementById("Equation").style.marginTop = ((Math.abs(scale - 2) * .75) + 6) + "vw";
+    document.getElementById("Equation").style.marginTop = ((Math.abs(scale - 2) * .75) + 7.5) + "vw";
     document.getElementById("Answer").style.fontSize = ((scale * .75) + 2.75) + "vw";
     document.getElementById("Answer").style.height = ((scale * .9) + 3) + "vw";
     return (((correctAnswer.toString().replace('.', '').replace('-', '').length) * ((scale * .8) + 2)).toString()) + "vw";
