@@ -86,14 +86,6 @@ select {
   bottom: 1.5vw;
   left: 1.5vw;
   font-size: 1.2vw;
-  color: #95b1a0;
-  font-family: poppins-medium;
-}
-#ProblemScreen-Streak {
-  position: absolute;
-  bottom: 1.5vw;
-  margin: 0 0 0 47%;
-  font-size: 1.2vw;
   color: #9d8189;
   font-family: poppins-medium;
 }
