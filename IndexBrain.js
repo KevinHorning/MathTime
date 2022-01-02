@@ -53,8 +53,6 @@ function BackToHome(){
     document.getElementById("AnswerSpace").innerHTML = '<input id="Answer" class="EquationPart">'; 
     document.getElementById("ProblemScreen-Result").innerHTML = "";
 
-    answeredRight = 0;
-    answeredTotal = 0;
     UpdateStats(true);
 }
 
@@ -211,19 +209,24 @@ function GetNextProblem(){
 
 function UpdateStats(clear){
     if (clear == true){
+        answeredRight = 0;
+        answeredTotal = 0;
+        streak = 0;
+
         document.getElementById("AnsweredRight").innerHTML = "";
         document.getElementById("AnsweredTotal").innerHTML = "";
         document.getElementById("StatsSlash").innerHTML = "";
         document.getElementById("StatsMessage").innerHTML = "";
-        document.getElementById("StreakMessage").innerHTML = "";
-        document.getElementById("StreakValue").innerHTML = "";
     }
     else { // (clear == false)
         document.getElementById("AnsweredRight").innerHTML = answeredRight;
         document.getElementById("AnsweredTotal").innerHTML = answeredTotal;
         document.getElementById("StatsSlash").innerHTML = "/";
-        document.getElementById("StatsMessage").innerHTML = "Answered Correctly";
-        document.getElementById("StreakMessage").innerHTML = "Streak: ";
-        document.getElementById("StreakValue").innerHTML = streak;
+        if (streak == 0){
+            document.getElementById("StatsMessage").innerHTML = "Answered Right";
+        }
+        else {
+            document.getElementById("StatsMessage").innerHTML = "Answered Right (Streak of " + streak + ")";
+        }
     }
 }
